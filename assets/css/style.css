@@ -1,0 +1,115 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f3f6f5;
+  color: #182322;
+}
+
+/* Initial animation */
+.hero-item {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.1s;
+}
+.hero-delay-2 {
+  animation-delay: 0.25s;
+}
+.hero-delay-3 {
+  animation-delay: 0.4s;
+}
+.hero-delay-4 {
+  animation-delay: 0.55s;
+}
+.hero-delay-5 {
+  animation-delay: 0.7s;
+}
+
+.hero-image {
+  opacity: 0;
+  transform: translateX(40px) scale(0.97);
+  animation: imageIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Scroll animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 50px rgba(20, 40, 35, 0.08);
+}
+
+.project-image {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.035);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  left: 50%;
+  bottom: -6px;
+  background: #12856f;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.green-button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.green-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(18, 133, 111, 0.2);
+}
